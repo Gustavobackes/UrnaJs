@@ -3,12 +3,20 @@ let QTD_ELEITORES, N_ELEITOR, CANDIDATO, VOTOS; // INTEIRO
 let VOTO; // INTEIRO
 let V; // INTEIRO
 let NOME; //CARACTERE
+N_ELEITOR = 1;
 
 //% DE VOTACAO
 let BRA, PERCENTUAL_BRANCO, PERCENTUAL_NULOS, PERCENTUAL; // REAL
 
 // OPCOES DE VOTACAO
 let TOTAL_VOTOS_VALIDOS, BRANCO, A, B, C, NULO; // INTEIRO
+
+TOTAL_VOTOS_VALIDOS = 0;
+BRANCO = 0;
+A = 0;
+B = 0;
+C = 0;
+NULO = 0;
 
 function eleicao() {
   do {
@@ -24,28 +32,28 @@ function eleicao() {
         Candidato N°30 - Paulo Cardos
         Escolha o candidato:
         `);
-      switch (VOTO) {
+      switch (parseInt(VOTO)) {
         case 0:
           BRANCO = BRANCO++;
-          alert(`ELEITOR: N° ${N_ELEITOR},  VOTOU EM BRANCO!`);
+          alert(`ELEITOR: N° ${N_ELEITOR}, VOTOU EM BRANCO!`);
           break;
         case 10:
           A = A++;
-          alert(`ELEITOR: N° ${N_ELEITOR},  ANTÔNIO DA SILVA!`);
+          alert(`ELEITOR: N° ${N_ELEITOR}, VOTOU EM ANTÔNIO DA SILVA!`);
           break;
         case 20:
           B = B++;
-          alert(`ELEITOR: N° ${N_ELEITOR},  JOSÉ NASCIMENTO!`);
+          alert(`ELEITOR: N° ${N_ELEITOR}, VOTOU EM JOSÉ NASCIMENTO!`);
           break;
         case 30:
           C = C++;
-          alert(`ELEITOR: N° ${N_ELEITOR}, PAULO CARDOS!`);
+          alert(`ELEITOR: N° ${N_ELEITOR}, VOTOU EM PAULO CARDOS!`);
           break;
         default:
           NULO = NULO++;
       }
-      N_ELEITOR = N_ELEITOR++;
-    } while ((toString(N_ELEITOR) = QTD_ELEITORES));
+      N_ELEITOR = N_ELEITOR + 1;
+    } while ((N_ELEITOR !== parseInt(QTD_ELEITORES)));
 
     alert(`QUANTIDADE DE ELEITORES: ${QTD_ELEITORES}`);
 
